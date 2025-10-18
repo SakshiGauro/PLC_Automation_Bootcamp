@@ -245,9 +245,9 @@ A Circuit Breaker is an automatically operated electrical protection device that
 
 **Example:**  
 > ABB 630A CB  
-> - \( I_{cu} = 50\,kA \)  
-> - \( I_{cs} = 0.5 \times I_{cu} = 25\,kA \)  
-> - Can safely break 25 kA faults up to 3 times (3 min apart).
+> - Icu = 50kA
+> - Ics = 0.5 * Icu = 25kA  
+> - Can safely break 25 kA faults up to 3 times (3 min apart)
 
 ### Types of Circuit Breakers
 
