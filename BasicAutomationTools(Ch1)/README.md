@@ -106,7 +106,9 @@ Switches are categorized by the number of **poles** (input lines) and **throws**
 | NC Push Button | ON | Turns OFF when pressed, returns to ON | Stop circuit |
 | Selector Switch | Holds last position | Rotates to select one of several paths | Mode selection (Auto/Manual/Speed) |
 
-### Relays
+### Relays and Contractors
+
+#### Relays
 A relay is an **electromechanical switch** that uses a magnetic coil to control a circuit. When voltage is applied to the coil, it becomes an electromagnet that changes the state of the contacts (NO/NC).
 
 **Key Components:**
@@ -119,7 +121,7 @@ A relay is an **electromechanical switch** that uses a magnetic coil to control 
 ![Relay Diagram](image-24.png)
 
 
-#### Relay Types
+##### Relay Types
 
 | Basis | Example | Description |
 |--------|----------|-------------|
@@ -128,7 +130,7 @@ A relay is an **electromechanical switch** that uses a magnetic coil to control 
 | **Max Current** | 20A | Maximum current that contacts can handle |
 
 ---
-### Contactors
+#### Contactors
 A contactor is a heavy-duty **electromechanical switch** used to control **high-current devices** such as motors, heaters, and lighting systems.
 
 **Why Use a Contactor?**
@@ -143,7 +145,7 @@ A contactor is a heavy-duty **electromechanical switch** used to control **high-
 **Diagram:**  
 ![Contactor Diagram](image-25.png)
 
-#### Contractor Types
+##### Contractor Types
 | Type | Example |
 |-------|----------|
 | **Operating Voltage:** | 120–250V AC/DC |
@@ -151,7 +153,7 @@ A contactor is a heavy-duty **electromechanical switch** used to control **high-
 
 ---
 
-###  Relay vs Contactor
+####  Relay vs Contactor
 
 | Feature | Relay | Contactor |
 |----------|--------|------------|
@@ -164,9 +166,186 @@ A contactor is a heavy-duty **electromechanical switch** used to control **high-
 
 ---
 
+### OverCurrent relays and Circuit Breakers
+This chapter explains **protection devices** used in automation and electrical systems, mainly **overcurrent relays** and **circuit breakers (CBs)**. These components are critical for ensuring equipment safety, preventing damage, and isolating faulty circuits.
+
+### 1. Overcurrent Relays
+An overcurrent relay detects when the current exceeds a preset safe value and **automatically trips** (disconnects) the circuit to prevent damage due to overheating or overload.
+
+#### Principle of Operation
+- Under normal conditions, current flows normally and the relay remains inactive.  
+- When the current exceeds a preset value (**rated current**), the relay **energizes** and triggers the circuit to **trip**.
+- This trip action disconnects the circuit or stops a motor, preventing overheating or equipment failure.
+
+**Diagram:**  
+![alt text](image-26.png)
+
+#### Device Adjusting
+
+##### Tripping Current Setting
+Determines the current level at which the relay will trip the circuit:
+\[
+I_{OL} = 1.1 \times I_R
+\]
+Where:  
+- \( I_{OL} \): Overcurrent trip value  
+- \( I_R \): Rated current of the device  
+
+##### Tripping Time Setting
+Defines the **delay time** between detecting an overload and tripping the circuit.  
+
+**Why?**
+> This delay ensures **temporary surges** (like during motor startup) do not cause false trips. Example: *5-second delay before tripping.*
+
+##### Manual vs Automatic Reset
+| Mode | Behavior |
+|-------|-----------|
+| **Manual** | Requires user to reset the relay after tripping |
+| **Automatic** | Relay resets automatically after cooling or timeout |
+
+##### NO & NC Contacts
+- **Normally Open (NO):** Closes when tripped → can signal alarms or indicators  
+- **Normally Closed (NC):** Opens when tripped → cuts power to motors or other devices  
+
+---
+
+### 2. Circuit Breakers (CB)
+
+A Circuit Breaker is an automatically operated electrical protection device that disconnects the circuit under **fault conditions** such as overload or short circuit.
+
+**Diagram:**  
+![Circuit Breaker Structure](![alt text]()image-27.png)
+
+#### Types of Electrical Faults
+
+##### Overload Fault
+- Current exceeds rated limit → causes **excessive heating**.  
+- The **bimetallic strip** inside the CB bends due to heat and **trips the circuit**.  
+- Tripping time is **inversely proportional** to current:
+  - Higher current → faster trip.
+- This is called **thermal protection** because bimetallic material expands as a result of **thermal effect** when there’s a larger current 
+
+##### Short Circuit Fault
+- Sudden high current flow between **phases** or between **phase and neutral/ground**.  
+- The **magnetic coil** activates instantly, tripping the CB almost immediately. Tripping speed is constant 
+- Known as **magnetic protection** because it a protection casued by magnets.
+
+**Diagram:**  
+![Thermal Protection Principle](image-28.png)
+
+**Circuit Breaker Characteristics**
+
+| Fault Type | Tripping Behavior | Key Notes |
+|-------------|------------------|------------|
+| **Overload** | Inversely proportional tripping time | Thermal protection (bimetallic) |
+| **Short Circuit** | Instantaneous tripping | Magnetic protection (coil-based) |
+
+#### Capacity Ratings
+- **Ultimate Capacity Current (Icu):** Max short-circuit current the breaker can withstand and break the circuit, the circuit breaker may be damaged after this SC current.  
+- **Service Capacity Current (Ics):** percent of the the ultimate capacity current (e.g., 50%) that the circuit breaker can break the circuit 3 consecutive times with a time of 3 minutes between the trip and the other without being damaged
+
+**Example:**  
+> ABB 630A CB  
+> - \( I_{cu} = 50\,kA \)  
+> - \( I_{cs} = 0.5 \times I_{cu} = 25\,kA \)  
+> - Can safely break 25 kA faults up to 3 times (3 min apart).
+
+### Types of Circuit Breakers
+
+#### Miniature Circuit Breaker (MCB)
+
+- **Smallest size**, fixed trip characteristics  
+- Rated current: **10 A – 125 A**  
+- Short-circuit range: **1 kA – 15 kA**  
+- Breaking time: **≈ 3 ms**
+- fixed type CB: **same relation of the overloading current or the short circuit current** 
+
+##### Trip Curves
+| Type | Sensitivity | Description |
+|-------|--------------|-------------|
+| **B16** | High | Trips instantly at small overload (sensitive loads) |
+| **C16** | Medium | Standard protection for general use |
+| **D16** | Low | Allows high inrush current (motors, transformers) |
+
+**Diagram:**  
+![miniatureCB](image-38.png)
+
+##### Based on Poles
+| Type | Image |
+|-------|--------------|
+|Single Pole (1P)|![single pole](image-31.png)|
+|Double Pole (2P)|![double pole](image-32.png)|
+|Three Pole (3P)|![three pole](image-33.png)|
+|Four Pole (4P)|![four pole](image-34.png)|
+
+#### Molded Case Circuit Breaker (MCCB)
+
+- **Medium size**, used for higher current circuits  
+- Rated current: **16 A – 1600 A**  
+- Short-circuit range: **18 kA – 70 kA**  
+- Breaking time: **≈ 9 ms**  
+- Can be **fixed** or **adjustable**
+
+**Diagram:**  
+![moldedCB](image-39.png)
+
+##### Key Terms:
+- **Ampere Frame (AF):** Maximum current rating breaker can handle  
+- **Ampere Trip (AT):** Adjustable trip value (% of AF)  
+
+##### Based on Poles
+| Type | Image |
+|-------|--------------|
+|3 Poles (3P)|![alt text](image-36.png)|
+|4 Pole (4P)|![alt text](image-37.png)|
 
 
-| Relay | OFF (coil not energized) | Energizes coil to connect NO/NC contacts | Control logic / low-current switching |
-| Contactor | ON | Turns OFF & locks until reset | Safety / Emergency stop |
-| Emergency Switch | ON | Turns OFF & locks until reset | Safety / Emergency stop |
+### Air Circuit Breaker (ACB)
 
+- **Largest size**, used for heavy-duty industrial applications  
+- Rated current: **630 A – 6300 A**  
+- Short-circuit current: **36 kA – 150 kA**  
+- Breaking time: **≈ 30 ms**  
+- **Fully adjustable** because it has larger current value
+
+**Delay Modes:**
+| Type | Description |
+|------|--------------|
+| **Long Time Delay** | Trips after a long delay (overload) |
+| **Short Time Delay** | Trips after a short delay |
+| **Instantaneous** | Trips immediately (short circuit) |
+
+**Diagram:**  
+![alt text](image-40.png)
+
+##### Based on Poles
+| Type | Image |
+|-------|--------------|
+|3 Poles (3P)|![alt text](image-41.png)|
+|4 Pole (4P)|![alt text](image-42.png)|
+
+#### Standard Ratings
+**Rated Current (A):** 10, 16, 20, 25, 32, 40, 50, 63, 80, 100, 125, 160, 200, 250, 320, 400, 500, 630, 800, 1000, 1250, 1600, 2000, 2500, 3200, 4000, 5000, 6300 
+**Short-Circuit Rating (kA)** 1, 3, 5, 6, 10, 15, 18, 20, 25, 70, 100, 130, 150
+
+> The **incoming CB** in a distribution panel should have the **same rating** as the **outgoing CB** to maintain balance and coordination.
+
+---
+
+### Summary Table
+
+| Device | Protection Type | Trip Mechanism | Tripping Time | Rated Current Range | Application |
+|---------|-----------------|----------------|----------------|---------------------|--------------|
+| **Overcurrent Relay** | Overload | Thermal (coil) | Adjustable delay | Motor control circuits | Protects motor circuits |
+| **MCB** | Overload & Short Circuit | Thermal + Magnetic | 3 ms | 10–125 A | Residential/Light industrial |
+| **MCCB** | Overload & Short Circuit | Thermal + Magnetic | 9 ms | 16–1600 A | Industrial panels |
+| **ACB** | Overload & Short Circuit | Thermal + Magnetic | 30 ms | 630–6300 A | Large industrial / Power distribution |
+
+---
+
+> ⚡ **Key Takeaway:**  
+> Overcurrent relays and circuit breakers are essential for **automated protection**.  
+> - Relays **detect** and **trigger** control actions.  
+> - Circuit breakers **isolate** and **protect** the circuit physically.
+
+---
