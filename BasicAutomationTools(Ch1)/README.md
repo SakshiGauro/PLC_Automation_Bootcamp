@@ -16,7 +16,7 @@ A **toggle switch** maintains its last state even after being released. It’s n
 
 | Diagram | Example |
 | :------: | -------: |
-| ![Toggle Switch Symbol](image-2.png) |![Toggle Switch](image-1.png) |
+| ![Toggle Switch Symbol](image.png) |![Toggle Switch](image-1.png) |
 
 ---
 ### 2. Push Button Switch
@@ -46,8 +46,8 @@ There are two main types of push buttons:
 **Summary**
 | Switch | Diagram | Example |
 | :------- | :------: | -------: |
-| NO (Start Button) | ![alt text](image-5.png)| ![alt text](image-6.png)|
-| NC (Stop Button) | ![alt text](image-7.png)| ![alt text](image-8.png)|
+| NO (Start Button) | ![alt text](image-2.png)| ![alt text](image-3.png)|
+| NC (Stop Button) | ![alt text](image-4.png)| ![alt text](image-5.png)|
 ---
 
 ### 3. Emergency (Kill) Switch
@@ -62,7 +62,7 @@ An emergency stop (E-Stop) is a **safety mechanism** designed to quickly shut of
 
 | Diagram | Example |
 | :------: | -------: |
-| ![alt text](image-10.png) | ![Emergency Stop Button](image-11.png) |  
+| ![alt text](image-7.png) | ![Emergency Stop Button](image-8.png) |  
 
 ---
 
@@ -78,10 +78,10 @@ A selector switch can be set to one of several fixed positions to select a contr
 #### Types
 | Type | Positions | Description | Diagram | Example |
 |------|-------|---------|------------|-------------|
-| **Two-position** | ON / OFF | Simple on-off control |![alt text](image-14.png)| ![alt text](image-9.png)|
-| **Three-position** | OFF / P1 / P2 | Common in motor direction control | ![alt text](image-15.png) | ![alt text](image-12.png) |
-| **Four-position** | OFF / P1 / P2 / P3| Used for motor speed selection | ![alt text](image-16.png)| ![alt text](image-17.png)|
-| **Seven-position** | Multiple voltage ranges | Used for multimeter or selector applications | ![alt text](image-18.png) | ![alt text](image-13.png) |
+| **Two-position** | ON / OFF | Simple on-off control |![alt text](image-11.png)| ![alt text](image-6.png)|
+| **Three-position** | OFF / P1 / P2 | Common in motor direction control | ![alt text](image-12.png) | ![alt text](image-9.png) |
+| **Four-position** | OFF / P1 / P2 / P3| Used for motor speed selection | ![alt text](image-13.png)| ![alt text](image-14.png)|
+| **Seven-position** | Multiple voltage ranges | Used for multimeter or selector applications | ![alt text](image-15.png) | ![alt text](image-10.png) |
 
 ---
 
@@ -91,10 +91,10 @@ Switches are categorized by the number of **poles** (input lines) and **throws**
 
 | Type | Meaning | Description | Diagram |
 |------|----------|-------------|----------|
-| **SPST** | Single Pole Single Throw | One input, one output | ![SPST Diagram](image-20.png) |
-| **SPDT** | Single Pole Double Throw | One input, two outputs | ![SPDT Diagram](image-21.png) |
-| **DPST** | Double Pole Single Throw | Two inputs, one output | ![DPST Diagram](image-22.png) |
-| **DPDT** | Double Pole Double Throw | Two inputs, two outputs | ![DPDT Diagram](image-23.png) |
+| **SPST** | Single Pole Single Throw | One input, one output | ![SPST Diagram](image-16.png) |
+| **SPDT** | Single Pole Double Throw | One input, two outputs | ![SPDT Diagram](image-17.png) |
+| **DPST** | Double Pole Single Throw | Two inputs, one output | ![DPST Diagram](image-18.png) |
+| **DPDT** | Double Pole Double Throw | Two inputs, two outputs | ![DPDT Diagram](image-19.png) |
 
 
 #### Summary
@@ -118,7 +118,7 @@ A relay is an **electromechanical switch** that uses a magnetic coil to control 
 - **Common (COM):** Shared connection between NO and NC  
 
 **Diagram:**  
-![Relay Diagram](image-24.png)
+![Relay Diagram](image-20.png)
 
 
 ##### Relay Types
@@ -143,7 +143,7 @@ A contactor is a heavy-duty **electromechanical switch** used to control **high-
   - Can be extended with additional modules if needed  
 
 **Diagram:**  
-![Contactor Diagram](image-25.png)
+![Contactor Diagram](image-21.png)
 
 ##### Contractor Types
 | Type | Example |
@@ -162,7 +162,7 @@ A contactor is a heavy-duty **electromechanical switch** used to control **high-
 | **Contacts** | 1–4 | 3+ main contacts |
 | **Current Rating** | very low (up to 20A) | very high (10A–2600A) |
 | **Application** | Control circuits | Power circuits (motors, lights, etc.) |
-| **Diagram** | ![Relay Diagram](image-24.png) | ![Contactor Diagram](image-25.png)|
+| **Diagram** | ![Relay Diagram](image-20.png) | ![Contactor Diagram](image-21.png)|
 
 ---
 
@@ -177,7 +177,7 @@ An overcurrent relay detects when the current exceeds a preset safe value and **
 - This trip action disconnects the circuit or stops a motor, preventing overheating or equipment failure.
 
 **Diagram:**  
-![alt text](image-26.png)
+![alt text](image-22.png)
 
 #### Device Adjusting
 
@@ -213,7 +213,7 @@ Defines the **delay time** between detecting an overload and tripping the circui
 A Circuit Breaker is an automatically operated electrical protection device that disconnects the circuit under **fault conditions** such as overload or short circuit.
 
 **Diagram:**  
-![Circuit Breaker Structure](![alt text]()image-27.png)
+![Circuit Breaker Structure](image-36.png)
 
 #### Types of Electrical Faults
 
@@ -230,7 +230,7 @@ A Circuit Breaker is an automatically operated electrical protection device that
 - Known as **magnetic protection** because it a protection casued by magnets.
 
 **Diagram:**  
-![Thermal Protection Principle](image-28.png)
+![Thermal Protection Principle](image-24.png)
 
 **Circuit Breaker Characteristics**
 
@@ -267,15 +267,15 @@ A Circuit Breaker is an automatically operated electrical protection device that
 | **D16** | Low | Allows high inrush current (motors, transformers) |
 
 **Diagram:**  
-![miniatureCB](image-38.png)
+![miniatureCB](image-31.png)
 
 ##### Based on Poles
 | Type | Image |
 |-------|--------------|
-|Single Pole (1P)|![single pole](image-31.png)|
-|Double Pole (2P)|![double pole](image-32.png)|
-|Three Pole (3P)|![three pole](image-33.png)|
-|Four Pole (4P)|![four pole](image-34.png)|
+|Single Pole (1P)|![single pole](image-25.png)|
+|Double Pole (2P)|![double pole](image-26.png)|
+|Three Pole (3P)|![three pole](image-27.png)|
+|Four Pole (4P)|![four pole](image-28.png)|
 
 #### Molded Case Circuit Breaker (MCCB)
 
@@ -286,7 +286,7 @@ A Circuit Breaker is an automatically operated electrical protection device that
 - Can be **fixed** or **adjustable**
 
 **Diagram:**  
-![moldedCB](image-39.png)
+![moldedCB](image-32.png)
 
 ##### Key Terms:
 - **Ampere Frame (AF):** Maximum current rating breaker can handle  
@@ -295,8 +295,8 @@ A Circuit Breaker is an automatically operated electrical protection device that
 ##### Based on Poles
 | Type | Image |
 |-------|--------------|
-|3 Poles (3P)|![alt text](image-36.png)|
-|4 Pole (4P)|![alt text](image-37.png)|
+|3 Poles (3P)|![alt text](image-29.png)|
+|4 Pole (4P)|![alt text](image-30.png)|
 
 
 ### Air Circuit Breaker (ACB)
@@ -315,13 +315,13 @@ A Circuit Breaker is an automatically operated electrical protection device that
 | **Instantaneous** | Trips immediately (short circuit) |
 
 **Diagram:**  
-![alt text](image-40.png)
+![alt text](image-33.png)
 
 ##### Based on Poles
 | Type | Image |
 |-------|--------------|
-|3 Poles (3P)|![alt text](image-41.png)|
-|4 Pole (4P)|![alt text](image-42.png)|
+|3 Poles (3P)|![alt text](image-34.png)|
+|4 Pole (4P)|![alt text](image-35.png)|
 
 #### Standard Ratings
 **Rated Current (A):** 10, 16, 20, 25, 32, 40, 50, 63, 80, 100, 125, 160, 200, 250, 320, 400, 500, 630, 800, 1000, 1250, 1600, 2000, 2500, 3200, 4000, 5000, 6300 
