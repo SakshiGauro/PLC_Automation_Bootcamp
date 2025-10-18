@@ -1,4 +1,4 @@
-# ⚙️ Chapter 1: Basic Automation Tools
+# Chapter 1: Basic Automation Tools
 
 This chapter introduces the most common manual control devices used in automation systems — **toggle switches**, **push buttons**, **emergency (kill) switches** and many more. Understanding how these work is essential for designing and troubleshooting control circuits. It also explains the **protection devices** used in automation and electrical systems, mainly **overcurrent relays** and **circuit breakers (CBs)**. These components are critical for ensuring equipment safety, preventing damage, and isolating faulty circuits.
 
@@ -342,7 +342,7 @@ A Circuit Breaker is an automatically operated electrical protection device that
 
 ---
 
-> ⚡ **Key Takeaway:**  
+> **Key Takeaway:**  
 > Overcurrent relays and circuit breakers are essential for **automated protection**.  
 > - Relays **detect** and **trigger** control actions.  
 > - Circuit breakers **isolate** and **protect** the circuit physically.
