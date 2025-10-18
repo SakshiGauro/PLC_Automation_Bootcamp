@@ -1,6 +1,6 @@
 # ⚙️ Chapter 1: Basic Automation Tools
 
-This chapter introduces the most common manual control devices used in automation systems — **toggle switches**, **push buttons**, **emergency (kill) switches** and many more. Understanding how these work is essential for designing and troubleshooting control circuits.
+This chapter introduces the most common manual control devices used in automation systems — **toggle switches**, **push buttons**, **emergency (kill) switches** and many more. Understanding how these work is essential for designing and troubleshooting control circuits. It also explains the **protection devices** used in automation and electrical systems, mainly **overcurrent relays** and **circuit breakers (CBs)**. These components are critical for ensuring equipment safety, preventing damage, and isolating faulty circuits.
 
 ---
 
@@ -16,7 +16,7 @@ A **toggle switch** maintains its last state even after being released. It’s n
 
 | Diagram | Example |
 | :------: | -------: |
-| ![Toggle Switch Symbol](image.png) |![Toggle Switch](image-3.png) |
+| ![Toggle Switch Symbol](image-2.png) |![Toggle Switch](image-1.png) |
 
 ---
 ### 2. Push Button Switch
@@ -167,7 +167,6 @@ A contactor is a heavy-duty **electromechanical switch** used to control **high-
 ---
 
 ### OverCurrent relays and Circuit Breakers
-This chapter explains **protection devices** used in automation and electrical systems, mainly **overcurrent relays** and **circuit breakers (CBs)**. These components are critical for ensuring equipment safety, preventing damage, and isolating faulty circuits.
 
 ### 1. Overcurrent Relays
 An overcurrent relay detects when the current exceeds a preset safe value and **automatically trips** (disconnects) the circuit to prevent damage due to overheating or overload.
