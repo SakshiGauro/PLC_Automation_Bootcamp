@@ -2,7 +2,7 @@
 
 This chapter demonstrates the **Door Automation Simulator** using the **LogixPro PLC simulator**, following the Section 7 video tutorial.
 
-### [🎥 Watch here](insert link)
+### [🎥 Watch here](https://youtu.be/xVrwU2mpoXs)
 
 In this exercise, you’ll design an **automated garage door system** that can open, close, and stop using PLC ladder logic.  
 You’ll also integrate **limit switches** and **motor control interlocking** to ensure safe operation.
