@@ -9,6 +9,7 @@ Each fan has its own **Start** and **Stop** push buttons. The program ensures th
 **Visual Representation**
 
 ![alt text](image.png)
+
 This diagram illustrates the **one-way sequence** of operation where:
 > Fan 1 → Fan 2 → Fan 3
 
