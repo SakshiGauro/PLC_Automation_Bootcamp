@@ -7,6 +7,7 @@ In this exercise, you’ll design a control system for **three industrial fans**
 Each fan has its own **Start** and **Stop** push buttons. The program ensures that a fan can only be **started or stopped** if the preceding fan(s) are already in the required state — helping to **prevent overloads and ensure proper ventilation sequencing**.
 
 **Visual Representation**
+
 ![alt text](image.png)
 This diagram illustrates the **one-way sequence** of operation where:
 > Fan 1 → Fan 2 → Fan 3
