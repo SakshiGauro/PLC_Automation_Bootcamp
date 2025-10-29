@@ -1,7 +1,7 @@
 ## Timers
 This chapter explains the concept and operation of **Timers** in PLC programming using the **LogixPro simulator**.
 
-### [🎥 Watch here](insert link)
+### [🎥 Watch here](https://www.youtube.com/watch?v=8JcoSNhdsI4)
 
 Timers are control elements that **delay actions** for a set period after receiving an input signal.  
 Unlike relays — which respond **instantaneously**, timers **wait** for a specified time interval before activating or deactivating outputs.
@@ -94,7 +94,7 @@ Here’s what the **TON** timer block looks like in the LogixPro simulator:
 ### Parameters
 
 #### **Inputs**
-- **Timer:** The address assigned to the timer. You can use any address between **T4:0 – T4:99**.  
+- **Timer:** The address assigned to the timer. You can use any address between **T4:1 – T4:99**.  
   *Example:* `T4:1`
 - **Time Base:** The factor used to calculate total delay time.  
   *Example:* `0.1` (each time unit equals 0.1 seconds)
@@ -114,7 +114,92 @@ Here’s what the **TON** timer block looks like in the LogixPro simulator:
 
 | Ladder Code | I/O Simulator | Description |
 |--------------|---------------|--------------|
-| ![ladder](image-ladder.png) | ![io](image-io.png) | When the **Toggle Switch** is pressed, the **TON timer (T4:1)** starts counting. Once the **Accumulated Value (Accum)** reaches the **Preset Value** of 10 seconds, the **Done (DN)** bit turns ON and energizes the **Lamp**. If the toggle switch is turned OFF before the timer completes, the timer resets and the lamp remains OFF. Turning OFF the toggle switch also turns OFF the lamp and resets the timer.|
+| ![ladder](image-3.png)| ![io](image-4.png) | When the **Toggle Switch** is pressed, the **TON timer (T4:1)** starts counting. Once the **Accumulated Value (Accum)** reaches the **Preset Value** of 10 seconds, the **Done (DN)** bit turns ON and energizes the **Lamp**. If the toggle switch is turned OFF before the timer completes, the timer resets and the lamp remains OFF. |
 
 > 🧠 **Key Concept:**  
 > The **TON** instruction is commonly used for delayed starts — for example, motor sequencing, staged activation, or warning lights that need to turn ON after a fixed delay.
+
+---
+
+### TOF (Timer OFF-Delay)
+
+In this section, we’ll use the **TOF (Timer OFF-Delay)** instruction in **LogixPro** to introduce a delay before an output turns OFF.
+
+### Timer Components in LogixPro
+
+Here’s what the **TOF** timer block looks like in the LogixPro simulator:
+
+![tof](image-9.png)
+
+### Parameters
+
+#### **Inputs**
+- **Timer:** The address assigned to the timer. You can use any address between **T4:1 – T4:99**.  
+  *Example:* `T4:1`
+- **Time Base:** The factor used to calculate the total delay time.  
+  *Example:* `0.1` → each time unit equals 0.1 seconds.
+- **Preset Value (PRE):** The set time duration before the output turns OFF.  
+  *Example:* `90` → Delay = `90 × 0.1 = 9 seconds`
+- **Accumulated Value (ACC):** Displays the elapsed time while the timer is counting.
+
+#### **Outputs**
+- **EN (Enable Bit):** Turns ON whenever the timer input is energized (logic HIGH).  
+- **DN (Done Bit):** Turns ON as long as the timer input is HIGH. When the input goes LOW, the **DN bit stays ON** until the timer finishes its OFF-delay count.
+
+---
+
+### Mini Example – Lamp Delay OFF Project
+
+**Goal:** Keep a lamp energized for **9 seconds after** turning OFF a toggle switch.
+
+| Ladder Code | I/O Simulator | Description |
+|--------------|---------------|--------------|
+| ![tofladder](image-6.png)| ![alt text](image-7.png) | When the **Toggle Switch** is ON, the lamp is energized immediately. When the toggle switch is turned OFF, the **TOF timer (T4:1)** begins counting. The lamp remains ON during this delay period. Once the **Accumulated Value (ACC)** reaches the **Preset Value (PRE)** of 9 seconds, the **Done (DN)** bit resets and the lamp turns OFF. |
+
+> 🧠 **Key Concept:**  
+> The **TOF** instruction is ideal for applications where you want an output to **remain active for a set duration after the input signal turns OFF**, such as **cooling fans**, **exhaust systems**, or **post-process timers**.
+
+---
+
+###  RTO (Retentive Timer ON)
+
+In this section, we’ll use the **RTO (Retentive Timer ON)** instruction in **LogixPro** to demonstrate how a timer can **retain its accumulated time** even after the input signal turns OFF.  
+Unlike the **TON** or **TOF** timers, the **RTO** does not automatically reset — it continues counting from where it left off until explicitly reset.
+
+### Timer Components in LogixPro
+
+Here’s what the **RTO** timer block looks like in the LogixPro simulator:
+
+![rto](image-8.png)
+
+### Parameters
+
+#### **Inputs** 
+- **Timer:** The address assigned to the timer. You can use any address between **T4:1 – T4:99**.  
+  *Example:* `T4:1`
+- **Time Base:** The factor used to calculate the total delay time.  
+  *Example:* `0.1` → each time unit equals 0.1 seconds.
+- **Preset Value (PRE):** The set time duration before the output turns OFF.  
+  *Example:* `100` → Delay = `100 × 0.1 = 10 seconds`
+- **Accumulated Value (ACC):** Displays the total time accumulated — and **retains this value** even when the input goes LOW.
+
+#### **Outputs**
+- **EN (Enable Bit):** Turns ON whenever the timer input is energized (logic HIGH).  
+- **DN (Done Bit):** Turns ON when the accumulated value equals the preset value — even if the input later turns OFF.  
+- **RES (Reset):** A separate instruction is required to reset the timer and clear the accumulated time.
+
+---
+
+### Mini Example – Retentive Lamp Delay Project
+
+**Goal:** Keep a lamp OFF until the timer has accumulated **10 seconds** of ON time — even across multiple switch activations.
+
+| Ladder Code | I/O Simulator | Description |
+|--------------|---------------|--------------|
+| ![rtoladder](image-10.png) | ![iorto](image-12.png) | When the **Toggle Switch** is ON, the timer starts counting. If the switch is turned OFF before the preset time is reached, the **RTO** retains (stores) the accumulated time. Each time the switch is turned back ON, the timer resumes counting from its last value. Once the accumulated time reaches the preset value, the **Done (DN)** bit energizes the lamp. Turning OFF the switch does **not** reset the lamp or timer. |
+| ![resetladder](image-11.png) | ![resetio](image-13.png) | To reset the timer and clear its accumulated value, use a **Reset (RES)** coil or push button. When pressed, it resets the **ACC** value to zero and turns OFF the lamp until the next cycle. |
+
+---
+
+> 🧠 **Key Concept:**  
+> The **RTO** instruction is perfect for applications requiring **cumulative timing**, such as tracking **machine runtime**, **motor maintenance intervals**, or **multi-stage operations** where timing must persist even after interruptions.
