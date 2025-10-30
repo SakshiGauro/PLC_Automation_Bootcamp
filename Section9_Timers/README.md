@@ -1,4 +1,4 @@
-## Timers
+# Chapter 9: Timers
 This chapter explains the concept and operation of **Timers** in PLC programming using the **LogixPro simulator**.
 
 ### [🎥 Watch here](https://www.youtube.com/watch?v=8JcoSNhdsI4)
