@@ -62,3 +62,16 @@ This logic demonstrates how the three fans operate alternately using **TON** tim
 > 💡 **Tip:**  
 > Closed-loop or alternating fan control is widely used in **industrial ventilation**, **HVAC systems**, and **motor load sharing** applications.  
 > It ensures **even equipment wear**, **balanced power consumption**, and **redundant operation** for continuous processes.
+
+---
+## Assignment 3
+
+Use a start switch and a stop switch connected as 2 digital inputs to the PLC
+use 2 indication lamps connected as 2 digital outputs of the PLC which simulates the working operation of the 2 motors
+
+1) if we pressed on the start switch the first motor will run for 5 second then the second motor will run for 5 second while running the first motor
+2) after the 5 seconds of the running operation of the second motor , the 2 motors will stop running
+3) if you pressed on the stop switch at any time all of the system will be turned off
+
+### My solution
+![alt text](image-17.png)
