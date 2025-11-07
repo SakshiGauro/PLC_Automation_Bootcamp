@@ -1,4 +1,4 @@
-# Chapter 12: Allen-Bradley PLC counters
+# Chapter 12 & 13: Allen-Bradley PLC counters
 
 This chapter covers **Counter UP (CTU)** and **Counter DOWN (CTD)** instructions in the **LogixPro PLC simulator**, following along with the video tutorial.
 
